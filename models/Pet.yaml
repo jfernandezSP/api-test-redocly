@@ -1,0 +1,31 @@
+type: object
+title: Pet
+required:
+  - name
+  - photoUrls
+additionalProperties: false
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 10
+  name:
+    type: string
+    example: doggie McDog
+  photoUrls:
+    type: array
+    xml:
+      wrapped: true
+    items:
+      type: string
+      xml:
+        name: photoUrl
+  status:
+    type: string
+    description: pet status in the store
+    enum:
+      - available
+      - pending
+      - sold
+xml:
+  name: pet
