@@ -1,2 +1,17 @@
 extends:
   - recommended
+
+plugins:
+- ./.redocly/plugins/isrg-styleguide-validation-rules.js # Path to your plugin
+
+# Configure the rules from your plugin and built-in ones
+rules:
+  # From your custom plugin
+  isrg-styleguide-endpoint-naming-conventions/operation-id-screaming-snake-case: error
+  isrg-styleguide-endpoint-naming-conventions/operation-id-required-prefix: error
+  isrg-styleguide-endpoint-naming-conventions/operation-summary-includes-operation-id: warn # or 'error' if MUST
+  isrg-styleguide-endpoint-naming-conventions/operation-id-structure-matches-path-and-method: error
+
+  # Ensure this built-in rule is active (it is by default with 'recommended')
+  operation-operationId-unique: error
+  operation-summary: warn # Example: ensure summary exists (built-in)
