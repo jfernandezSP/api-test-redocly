@@ -40,15 +40,15 @@ paths:
     put:
       tags:
         - pet
-      summary: Update an existing pet.
+      summary: P_PETSTORE_PETS_UPDATE
       description: Update an existing pet by Id.
-      operationId: updatePet
+      operationId: P_PETSTORE_PETS_UPDATE
       requestBody:
         description: Update an existent pet in the store
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Pet'
+              $ref: models/Pet.yaml
           application/xml:
             schema:
               $ref: '#/components/schemas/Pet'
